@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings and Lists in Python</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap">
+    <link rel="stylesheet" href="./scss/index.css">
+    <link rel="stylesheet" href="./scss/menu.css">
+</head>
+<body>
+    <header>
+        <div class="container flex-between">
+            <div>
+                <a href="http://127.0.0.1:5500/index.html">
+                    <p><span style="color: #16c461;">Task</span>Proof</p>
+                </a>
+            </div>
+
+            <div class="header-menu flex-center">
+                <ul class="flex-center">
+                    <a href="http://127.0.0.1:5500/start.html">
+                        <li>Start</li>
+                    </a>
+                    <a href="http://127.0.0.1:5500/menu.html">
+                        <li>Menu</li>
+                    </a>
+                    <a href="http://127.0.0.1:5500/catalog.html">
+                        <li>Catalog</li>
+                    </a>
+                    <a href="http://127.0.0.1:5500/index.html">
+                        <li>Home</li>
+                    </a>
+                </ul>
+            </div>
+
+            <div>
+                <a href="http://127.0.0.1:5500/login.html">
+                    <button>Log In</button>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="menu">
+            <h1>Strings and Lists in Python</h1>
+
+            <div class="toc">
+                <h3>Table of Contents</h3>
+                <ul class="two-columns">
+                    <li><a href="#strings">Strings</a></li>
+                    <li><a href="#string-basics">String Basics</a></li>
+                    <li><a href="#string-methods">String Methods</a></li>
+                    <li><a href="#lists">Lists</a></li>
+                    <li><a href="#list-basics">List Basics</a></li>
+                    <li><a href="#list-methods">List Methods</a></li>
+                </ul>
+            </div>
+
+            <h2 id="strings">STRINGS</h2>
+
+            <div class="definition">
+                <p>
+                    <strong>String</strong> — a sequence of characters enclosed in quotes. Strings in Python are
+                    <strong>immutable</strong>, meaning they cannot be changed after creation.
+                </p>
+            </div>
+
+            <h3 id="string-basics">Creating Strings</h3>
+
+            <pre><code># Single quotes
+text1 = 'Hello, World!'
+
+# Double quotes
+text2 = "Python is an excellent language"
+
+# Triple quotes (for multi-line text)
+text3 = """This is a long text
+that spans
+multiple lines"""
+
+# Empty string
+empty = ""</code></pre>
+
+            <h3>Basic String Operations</h3>
+
+            <h4>1. Concatenation (Addition)</h4>
+            <pre><code>first = "Hello"
+second = "World"
+result = first + " " + second  # "Hello World"</code></pre>
+
+            <h4>2. Repetition</h4>
+            <pre><code>text = "Python! "
+repeated = text * 3  # "Python! Python! Python! "</code></pre>
+
+            <h4>3. Indexing</h4>
+            <pre><code>word = "Python"
+print(word[0])   # 'P' (first character)
+print(word[-1])  # 'n' (last character)
+print(word[-2])  # 'o' (second to last)</code></pre>
+
+            <div class="note">
+                <p>
+                    <strong>Important:</strong> Indexing in Python starts at 0. Negative indices count from the end of
+                    the string.
+                </p>
+            </div>
+
+            <h4>4. Slicing</h4>
+            <pre><code>text = "Python Programming"
+
+print(text[0:6])    # 'Python' (from index 0 to 5)
+print(text[:6])     # 'Python' (from start to 6)
+print(text[7:])     # 'Programming' (from 7 to end)
+print(text[-11:])   # 'Programming' (last 11 characters)
+print(text[::2])    # 'Pto rgamn' (every second character)
+print(text[::-1])   # 'gnimmargorP nohtyP' (reversed string)</code></pre>
+
+            <h4>5. String Length</h4>
+            <pre><code>text = "Python"
+length = len(text)  # 6</code></pre>
+
+            <h4>6. Membership Testing</h4>
+            <pre><code>text = "Python Programming"
+print("Python" in text)      # True
+print("Java" in text)        # False
+print("Java" not in text)    # True</code></pre>
+
+            <h3 id="string-methods">String Methods</h3>
+
+            <h4>Case Conversion Methods</h4>
+
+            <table>
+                <tr>
+                    <th>Method</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+                <tr>
+                    <td class="method-name">upper()</td>
+                    <td>Converts all characters to uppercase</td>
+                    <td>"python".upper() → "PYTHON"</td>
+                </tr>
+                <tr>
+                    <td class="method-name">lower()</td>
+                    <td>Converts all characters to lowercase</td>
+                    <td>"PYTHON".lower() → "python"</td>
+                </tr>
+                <tr>
+                    <td class="method-name">capitalize()</td>
+                    <td>First letter uppercase, rest lowercase</td>
+                    <td>"python".capitalize() → "Python"</td>
+                </tr>
+                <tr>
+                    <td class="method-name">title()</td>
+                    <td>Capitalizes first letter of each word</td>
+                    <td>"hello world".title() → "Hello World"</td>
+                </tr>
+                <tr>
+                    <td class="method-name">swapcase()</td>
+                    <td>Swaps case of all characters</td>
+                    <td>"PyThOn".swapcase() → "pYtHoN"</td>
+                </tr>
+            </table>
+
+            <pre><code>text = "Python Programming"
+
+print(text.upper())       # "PYTHON PROGRAMMING"
+print(text.lower())       # "python programming"
+print(text.capitalize())  # "Python programming"
+print(text.title())       # "Python Programming"
+print(text.swapcase())    # "pYTHON pROGRAMMING"</code></pre>
+
+            <h4>Search and Check Methods</h4>
+
+            <table>
+                <tr>
+                    <th>Method</th>
+                    <th>Description</th>
+                    <th>Returns</th>
+                </tr>
+                <tr>
+                    <td class="method-name">find(sub)</td>
+                    <td>Searches for substring, returns index</td>
+                    <td>Index or -1</td>
+                </tr>
+                <tr>
+                    <td class="method-name">rfind(sub)</td>
+                    <td>Searches for substring from the end</td>
+                    <td>Index or -1</td>
+                </tr>
+                <tr>
+                    <td class="method-name">index(sub)</td>
+                    <td>Like find(), but raises an error</td>
+                    <td>Index or error</td>
+                </tr>
+                <tr>
+                    <td class="method-name">count(sub)</td>
+                    <td>Counts occurrences of substring</td>
+                    <td>Number</td>
+                </tr>
+                <tr>
+                    <td class="method-name">startswith(sub)</td>
+                    <td>Checks if string starts with substring</td>
+                    <td>True/False</td>
+                </tr>
+                <tr>
+                    <td class="method-name">endswith(sub)</td>
+                    <td>Checks if string ends with substring</td>
+                    <td>True/False</td>
+                </tr>
+            </table>
+
+            <pre><code>text = "Python Programming Language"
+
+# find() - returns index of first occurrence (or -1)
+print(text.find("Programming"))  # 7
+print(text.find("Java"))         # -1
+
+# rfind() - search from the end
+print(text.rfind("a"))  # 25
+
+# count() - count occurrences of substring
+print(text.count("a"))  # 3
+
+# startswith() - check beginning of string
+print(text.startswith("Python"))  # True
+
+# endswith() - check end of string
+print(text.endswith("Language"))  # True</code></pre>
+
+            <h4>Content Type Check Methods</h4>
+
+            <table>
+                <tr>
+                    <th>Method</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td class="method-name">isdigit()</td>
+                    <td>Are all characters digits?</td>
+                </tr>
+                <tr>
+                    <td class="method-name">isalpha()</td>
+                    <td>Are all characters letters?</td>
+                </tr>
+                <tr>
+                    <td class="method-name">isalnum()</td>
+                    <td>Are all characters letters or digits?</td>
+                </tr>
+                <tr>
+                    <td class="method-name">isspace()</td>
+                    <td>Are all characters whitespace?</td>
+                </tr>
+                <tr>
+                    <td class="method-name">islower()</td>
+                    <td>Are all letters lowercase?</td>
+                </tr>
+                <tr>
+                    <td class="method-name">isupper()</td>
+                    <td>Are all letters uppercase?</td>
+                </tr>
+            </table>
+
+            <pre><code># isdigit() - all characters are digits?
+print("12345".isdigit())    # True
+print("123a5".isdigit())    # False
+
+# isalpha() - all characters are letters?
+print("Python".isalpha())   # True
+print("Python3".isalpha())  # False
+
+# isalnum() - all characters are letters or digits?
+print("Python3".isalnum())  # True
+print("Python 3".isalnum()) # False
+
+# islower() - all letters are lowercase?
+print("python".islower())   # True
+print("Python".islower())   # False</code></pre>
+
+            <h4>String Processing Methods</h4>
+
+            <pre><code># strip() - removes whitespace from both sides
+text = "  Python  "
+print(text.strip())   # "Python"
+
+# lstrip() - removes whitespace from left
+print(text.lstrip())  # "Python  "
+
+# rstrip() - removes whitespace from right
+print(text.rstrip())  # "  Python"
+
+# replace() - replaces substring
+text = "Hello World"
+print(text.replace("World", "Python"))  # "Hello Python"
+
+# split() - splits string into list
+text = "Python is awesome"
+words = text.split()  # ['Python', 'is', 'awesome']
+
+text2 = "apple,banana,orange"
+fruits = text2.split(",")  # ['apple', 'banana', 'orange']
+
+# join() - joins list into string
+words = ['Python', 'is', 'great']
+text = " ".join(words)  # "Python is great"
+
+# center() - centers string
+print("Python".center(20, "-"))  # "-------Python-------"
+
+# ljust() - left aligns string
+print("Python".ljust(20, "-"))   # "Python--------------"
+
+# rjust() - right aligns string
+print("Python".rjust(20, "-"))   # "--------------Python"
+
+# zfill() - pads with zeros on the left
+print("42".zfill(5))  # "00042"</code></pre>
+
+            <h4>String Formatting</h4>
+
+            <pre><code># format() method
+name = "John"
+age = 20
+text = "My name is {}, I am {} years old".format(name, age)
+print(text)  # "My name is John, I am 20 years old"
+
+# With named parameters
+text = "My name is {name}, I am {age} years old".format(name="John", age=20)
+
+# f-strings (Python 3.6+) - recommended
+name = "John"
+age = 20
+text = f"My name is {name}, I am {age} years old"
+print(text)  # "My name is John, I am 20 years old"
+
+# With expressions
+x = 10
+y = 5
+print(f"Sum: {x + y}")  # "Sum: 15"</code></pre>
+
+            <h2 id="lists">LISTS</h2>
+
+            <div class="definition">
+                <p>
+                    <strong>List</strong> — an ordered mutable collection of elements. Lists can contain elements of
+                    different data types.
+                </p>
+            </div>
+
+            <h3 id="list-basics">Creating Lists</h3>
+
+            <pre><code># List of numbers
+numbers = [1, 2, 3, 4, 5]
+
+# List of strings
+fruits = ["apple", "banana", "orange"]
+
+# Mixed list
+mixed = [1, "two", 3.0, True, None]
+
+# Empty list
+empty1 = []
+empty2 = list()
+
+# List from range
+numbers = list(range(1, 6))  # [1, 2, 3, 4, 5]
+
+# Nested lists (list of lists)
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]</code></pre>
+
+            <h3>Basic List Operations</h3>
+
+            <h4>1. Accessing Elements (Indexing)</h4>
+            <pre><code>fruits = ["apple", "banana", "orange", "pear"]
+
+print(fruits[0])   # 'apple' (first element)
+print(fruits[-1])  # 'pear' (last element)
+print(fruits[-2])  # 'orange' (second to last)</code></pre>
+
+            <h4>2. Modifying Elements</h4>
+            <pre><code>fruits = ["apple", "banana", "orange"]
+fruits[1] = "mango"
+print(fruits)  # ['apple', 'mango', 'orange']</code></pre>
+
+            <h4>3. Slicing</h4>
+            <pre><code>numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+print(numbers[2:5])    # [2, 3, 4]
+print(numbers[:5])     # [0, 1, 2, 3, 4] (from start to 5)
+print(numbers[5:])     # [5, 6, 7, 8, 9] (from 5 to end)
+print(numbers[::2])    # [0, 2, 4, 6, 8] (every second)
+print(numbers[::-1])   # [9, 8, 7, 6, 5, 4, 3, 2, 1, 0] (reversed)</code></pre>
+
+            <h4>4. Concatenation and Repetition</h4>
+            <pre><code># Concatenation (addition)
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+result = list1 + list2  # [1, 2, 3, 4, 5, 6]
+
+# Repetition
+numbers = [1, 2] * 3  # [1, 2, 1, 2, 1, 2]</code></pre>
+
+            <h4>5. List Length</h4>
+            <pre><code>fruits = ["apple", "banana", "orange"]
+length = len(fruits)  # 3</code></pre>
+
+            <h4>6. Membership Testing</h4>
+            <pre><code>fruits = ["apple", "banana", "orange"]
+
+print("banana" in fruits)      # True
+print("pear" in fruits)        # False
+print("pear" not in fruits)    # True</code></pre>
+
+            <h3 id="list-methods">List Methods</h3>
+
+            <h4>Methods for Adding Elements</h4>
+
+            <table>
+                <tr>
+                    <th>Method</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+                <tr>
+                    <td class="method-name">append(item)</td>
+                    <td>Adds element to the end</td>
+                    <td>[1, 2].append(3) → [1, 2, 3]</td>
+                </tr>
+                <tr>
+                    <td class="method-name">insert(index, item)</td>
+                    <td>Inserts element at position</td>
+                    <td>[1, 3].insert(1, 2) → [1, 2, 3]</td>
+                </tr>
+                <tr>
+                    <td class="method-name">extend(iterable)</td>
+                    <td>Adds elements from another list</td>
+                    <td>[1, 2].extend([3, 4]) → [1, 2, 3, 4]</td>
+                </tr>
+            </table>
+
+            <pre><code># append() - adds element to end of list
+fruits = ["apple", "banana"]
+fruits.append("orange")
+print(fruits)  # ['apple', 'banana', 'orange']
+
+# insert() - inserts element at specified position
+fruits = ["apple", "orange"]
+fruits.insert(1, "banana")
+print(fruits)  # ['apple', 'banana', 'orange']
+
+# extend() - adds elements from another list
+fruits = ["apple", "banana"]
+fruits.extend(["orange", "pear"])
+print(fruits)  # ['apple', 'banana', 'orange', 'pear']</code></pre>
+
+            <div class="note">
+                <p>
+                    <strong>Important:</strong> append() adds one element (can be a list), while extend() adds elements
+                    from a list individually.
+                </p>
+            </div>
+
+            <h4>Methods for Removing Elements</h4>
+
+            <table>
+                <tr>
+                    <th>Method</th>
+                    <th>Description</th>
+                    <th>Returns</th>
+                </tr>
+                <tr>
+                    <td class="method-name">remove(item)</td>
+                    <td>Removes first occurrence of element</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td class="method-name">pop(index)</td>
+                    <td>Removes and returns element at index</td>
+                    <td>Removed element</td>
+                </tr>
+                <tr>
+                    <td class="method-name">clear()</td>
+                    <td>Removes all elements from list</td>
+                    <td>None</td>
+                </tr>
+            </table>
+
+            <pre><code># remove() - removes first occurrence of element
+fruits = ["apple", "banana", "orange", "banana"]
+fruits.remove("banana")
+print(fruits)  # ['apple', 'orange', 'banana']
+
+# pop() - removes and returns element at index
+fruits = ["apple", "banana", "orange"]
+removed = fruits.pop(1)  # removes "banana"
+print(removed)  # 'banana'
+print(fruits)   # ['apple', 'orange']
+
+# pop() without argument removes last element
+last = fruits.pop()
+print(last)    # 'orange'
+print(fruits)  # ['apple']
+
+# clear() - removes all elements
+fruits = ["apple", "banana", "orange"]
+fruits.clear()
+print(fruits)  # []
+
+# del - deletion by index or slice
+fruits = ["apple", "banana", "orange", "pear"]
+del fruits[1]
+print(fruits)  # ['apple', 'orange', 'pear']
+
+del fruits[1:3]
+print(fruits)  # ['apple']</code></pre>
+
+            <h4>Search and Count Methods</h4>
+
+            <table>
+                <tr>
+                    <th>Method</th>
+                    <th>Description</th>
+                    <th>Returns</th>
+                </tr>
+                <tr>
+                    <td class="method-name">index(item)</td>
+                    <td>Returns index of first occurrence</td>
+                    <td>Index or error</td>
+                </tr>
+                <tr>
+                    <td class="method-name">count(item)</td>
+                    <td>Counts number of occurrences</td>
+                    <td>Number</td>
+                </tr>
+            </table>
+
+            <pre><code># index() - returns index of first occurrence of element
+fruits = ["apple", "banana", "orange", "banana"]
+position = fruits.index("banana")
+print(position)  # 1
+
+# count() - returns number of occurrences of element
+numbers = [1, 2, 3, 2, 4, 2, 5]
+count = numbers.count(2)
+print(count)  # 3</code></pre>
+
+            <h4>Sorting Methods</h4>
+
+            <table>
+                <tr>
+                    <th>Method</th>
+                    <th>Description</th>
+                    <th>Modifies List?</th>
+                </tr>
+                <tr>
+                    <td class="method-name">sort()</td>
+                    <td>Sorts list in place</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td class="method-name">sorted()</td>
+                    <td>Returns sorted copy</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td class="method-name">reverse()</td>
+                    <td>Reverses list in place</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td class="method-name">reversed()</td>
+                    <td>Returns reversed iterator</td>
+                    <td>No</td>
+                </tr>
+            </table>
+
+            <pre><code># sort() - sorts list in place
+numbers = [3, 1, 4, 1, 5, 9, 2]
+numbers.sort()
+print(numbers)  # [1, 1, 2, 3, 4, 5, 9]
+
+# Sort in reverse order
+numbers.sort(reverse=True)
+print(numbers)  # [9, 5, 4, 3, 2, 1, 1]
+
+# sorted() - returns new sorted list (doesn't modify original)
+numbers = [3, 1, 4, 1, 5]
+sorted_numbers = sorted(numbers)
+print(sorted_numbers)  # [1, 1, 3, 4, 5]
+print(numbers)         # [3, 1, 4, 1, 5] (original unchanged)
+
+# reverse() - reverses list in place
+numbers = [1, 2, 3, 4, 5]
+numbers.reverse()
+print(numbers)  # [5, 4, 3, 2, 1]
+
+# Sorting strings
+fruits = ["banana", "apple", "orange"]
+fruits.sort()
+print(fruits)  # ['apple', 'banana', 'orange']</code></pre>
+
+            <h4>Copy Method</h4>
+
+            <pre><code># copy() - creates shallow copy of list
+original = [1, 2, 3]
+copy = original.copy()
+
+copy[0] = 100
+print(original)  # [1, 2, 3] (unchanged)
+print(copy)      # [100, 2, 3]
+
+# Alternative copying methods
+copy2 = original[:]
+copy3 = list(original)</code></pre>
+
+            <div class="note">
+                <p>
+                    <strong>Important:</strong> With simple assignment (list2 = list1), a reference is created, not a
+                    copy. Changes to list2 will affect list1.
+                </p>
+            </div>
+
+            <h3>Additional Features</h3>
+
+            <h4>List Comprehensions</h4>
+
+            <pre><code># Create list of squares of numbers from 1 to 5
+squares = [x**2 for x in range(1, 6)]
+print(squares)  # [1, 4, 9, 16, 25]
+
+# With condition (even numbers only)
+evens = [x for x in range(1, 11) if x % 2 == 0]
+print(evens)  # [2, 4, 6, 8, 10]
+
+# Convert strings to uppercase
+fruits = ["apple", "banana", "orange"]
+upper_fruits = [fruit.upper() for fruit in fruits]
+print(upper_fruits)  # ['APPLE', 'BANANA', 'ORANGE']</code></pre>
+
+            <h4>Built-in Functions for Lists</h4>
+
+            <pre><code>numbers = [3, 1, 4, 1, 5, 9, 2]
+
+# sum() - sum of elements
+total = sum(numbers)  # 25
+
+# max() - maximum element
+maximum = max(numbers)  # 9
+
+# min() - minimum element
+minimum = min(numbers)  # 1
+
+# len() - number of elements
+length = len(numbers)  # 7
+
+# all() - are all elements True?
+print(all([True, True, True]))   # True
+print(all([True, False, True]))  # False
+
+# any() - is at least one element True?
+print(any([False, False, True]))  # True
+print(any([False, False, False])) # False
+
+# enumerate() - get index and value
+fruits = ["apple", "banana", "orange"]
+for index, fruit in enumerate(fruits):
+    print(f"{index}: {fruit}")
+# 0: apple
+# 1: banana
+# 2: orange
+
+# zip() - combine multiple lists
+names = ["John", "Mary", "Peter"]
+ages = [20, 22, 19]
+for name, age in zip(names, ages):
+    print(f"{name}: {age} years old")
+# John: 20 years old
+# Mary: 22 years old
+# Peter: 19 years old</code></pre>
+
+            <h3>Comparing Strings and Lists</h3>
+
+            <table>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Strings</th>
+                    <th>Lists</th>
+                </tr>
+                <tr>
+                    <td><strong>Mutability</strong></td>
+                    <td>Immutable</td>
+                    <td>Mutable</td>
+                </tr>
+                <tr>
+                    <td><strong>Elements</strong></td>
+                    <td>Characters only</td>
+                    <td>Any data types</td>
+                </tr>
+                <tr>
+                    <td><strong>Indexing</strong></td>
+                    <td>✅ Yes</td>
+                    <td>✅ Yes</td>
+                </tr>
+                <tr>
+                    <td><strong>Slicing</strong></td>
+                    <td>✅ Yes</td>
+                    <td>✅ Yes</td>
+                </tr>
+                <tr>
+                    <td><strong>Concatenation</strong></td>
+                    <td>✅ Yes (+)</td>
+                    <td>✅ Yes (+)</td>
+                </tr>
+                <tr>
+                    <td><strong>Element Modification</strong></td>
+                    <td>❌ No</td>
+                    <td>✅ Yes</td>
+                </tr>
+            </table>
+
+            <pre><code># Strings are immutable
+text = "Hello"
+# text[0] = "h"  # Error! TypeError
+
+# Lists are mutable
+letters = ["H", "e", "l", "l", "o"]
+letters[0] = "h"
+print(letters)  # ['h', 'e', 'l', 'l', 'o']</code></pre>
+
+            <div class="note">
+                <p>
+                    <strong>Tip:</strong> Use strings for text that doesn't need to be changed. Use lists for collections of data that need to be modified, added to, or have elements removed.
+                </p>
+            </div>
+
+            <h3>Practical Examples</h3>
+
+            <h4>Example 1: Processing a List of Grades</h4>
+            <pre><code>grades = [85, 92, 78, 90, 88]
+
+# Average grade
+average = sum(grades) / len(grades)
+print(f"Average grade: {average}")  # 86.6
+
+# Maximum and minimum
+print(f"Maximum: {max(grades)}")  # 92
+print(f"Minimum: {min(grades)}")   # 78
+
+# How many grades above 85?
+high_grades = [grade for grade in grades if grade > 85]
+print(f"Grades above 85: {len(high_grades)}")  # 3</code></pre>
+
+            <h4>Example 2: Working with Strings and Lists</h4>
+            <pre><code># Split sentence into words
+sentence = "Python is an amazing programming language"
+words = sentence.split()
+print(words)
+# ['Python', 'is', 'an', 'amazing', 'programming', 'language']
+
+# Number of words
+print(f"Number of words: {len(words)}")  # 6
+
+# Find longest word
+longest = max(words, key=len)
+print(f"Longest word: {longest}")  # programming
+
+# Join back into string
+new_sentence = " ".join(words)
+print(new_sentence)</code></pre>
+
+            <h4>Example 3: Removing Duplicates</h4>
+            <pre><code>numbers = [1, 2, 3, 2, 4, 1, 5, 3]
+
+# Method 1: using set (order not preserved)
+unique1 = list(set(numbers))
+print(unique1)  # [1, 2, 3, 4, 5] (order may vary)
+
+# Method 2: preserving order
+unique2 = []
+for num in numbers:
+    if num not in unique2:
+        unique2.append(num)
+print(unique2)  # [1, 2, 3, 4, 5]</code></pre>
+
+        </div>
+
+        <button id="scrollUpBtn">⬆</button>
+    </main>
+
+    <footer></footer>
+
+    <script src="./js/menu.js"></script>
+</body>
+</html>

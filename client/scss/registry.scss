@@ -1,0 +1,32 @@
+.registry {
+    width: 500px;
+    height: 550px;
+    color: #20e475;
+    gap: 10px;
+    background-color: #232323;
+
+    h2 {
+        font-size: 50px;
+        font-weight: 700;
+        margin-bottom: 30px;
+        color: #20e475;
+    }
+
+    button {
+        padding: 10px 96px;
+    }
+
+    p {
+        font-size: 18px;
+        color: #20e475;
+    }
+
+    a {
+        font-size: 18px;
+        color: #20e475;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

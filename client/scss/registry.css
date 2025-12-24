@@ -1,0 +1,27 @@
+.registry {
+  width: 500px;
+  height: 550px;
+  color: #20e475;
+  gap: 10px;
+  background-color: #232323;
+}
+.registry h2 {
+  font-size: 50px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #20e475;
+}
+.registry button {
+  padding: 10px 96px;
+}
+.registry p {
+  font-size: 18px;
+  color: #20e475;
+}
+.registry a {
+  font-size: 18px;
+  color: #20e475;
+}
+.registry a:hover {
+  text-decoration: underline;
+}/*# sourceMappingURL=registry.css.map */

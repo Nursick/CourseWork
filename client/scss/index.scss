@@ -1,0 +1,223 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.glow-title {
+    color: white;
+    text-transform: uppercase;
+    transition-property: box-shadow;
+    text-shadow:
+        0 0 5px #20e475,
+        0 0 25px #20e475,
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    background:
+        radial-gradient(circle at top left,
+            rgba(32, 228, 117, 0.2),
+            transparent 60%),
+        radial-gradient(circle at top right,
+            rgba(32, 228, 117, 0.2),
+            transparent 60%),
+        radial-gradient(circle at center,
+            rgba(32, 228, 117, 0.15),
+            transparent 70%),
+        radial-gradient(circle at bottom left,
+            rgba(32, 228, 117, 0.2),
+            transparent 60%),
+        radial-gradient(circle at bottom right,
+            rgba(32, 228, 117, 0.2),
+            transparent 60%),
+        linear-gradient(180deg,
+            black 0%,
+            #232323 50%,
+            black 100%);
+
+    a {
+        text-decoration: none;
+    }
+
+    input {
+        width: 250px;
+        padding: 10px 10px;
+        font-size: 18px;
+        border: none;
+        border-radius: 5px;
+    }
+
+    button {
+        background-color: black;
+        padding: 10px 45px;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        color: #20e475;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        transition: .7s;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 150%;
+            height: 100%;
+            background: linear-gradient(120deg,
+                    transparent,
+                    rgba(32, 228, 117, 0.4),
+                    transparent);
+            transition: left .9s;
+        }
+
+        &:hover {
+            background-color: #1fcc6a;
+            color: black;
+            box-shadow:
+                0 0 12px #20e475,
+                0 0 22px #20e475;
+            transform: scale(1.07);
+        }
+
+        &:hover::before {
+            left: 100%;
+        }
+    }
+}
+
+// index./
+header {
+    width: 100%;
+    padding: 25px 40px;
+    border-bottom: 1px solid black;
+    margin-bottom: 60px;
+
+    .container {
+        width: 1100px;
+    }
+
+    p {
+        font-size: 30px;
+        font-weight: 700;
+        color: white;
+        cursor: pointer;
+
+        span {
+            color: #20e475;
+            text-shadow: 0 0 10px rgba(32, 228, 117, 0.6);
+        }
+    }
+
+    .header-menu {
+        ul {
+            list-style: none;
+            gap: 40px;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            font-size: 20px;
+            color: rgb(188, 188, 188);
+            padding: 6px 14px;
+            border-radius: 6px;
+            transition: .7s;
+            cursor: pointer;
+
+            &:hover {
+                color: black;
+                background: #20e475;
+                box-shadow: 0 0 12px rgba(32, 228, 117, 0.7);
+                transform: translateY(-2px);
+            }
+        }
+    }
+
+    button {
+        background: black;
+        color: #20e475;
+        border: 1px solid #20e475;
+        padding: 10px 35px;
+        font-size: 18px;
+        border-radius: 6px;
+        transition: 0.4s;
+
+        &:hover {
+            background: #20e475;
+            color: black;
+            box-shadow: 0 0 15px rgba(32, 228, 117, 0.8);
+            transform: scale(1.05);
+        }
+    }
+}
+
+main {
+    .welcome {
+        font-size: 25px;
+        line-height: 1.6;
+        max-width: 900px;
+        margin-bottom: 40px;
+    }
+
+    .container {
+        h1 {
+            color: white;
+            font-size: 90px;
+            font-weight: 900;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+            color: rgb(188, 188, 188);
+        }
+    }
+
+    p {
+        text-align: center;
+        color: rgb(188, 188, 188);
+        font-size: 20px;
+    }
+
+    .startBtn {
+        color: black;
+        font-size: 18px;
+        margin-right: 100px;
+        background-color: #1fcc6a;
+    }
+}
+
+footer {
+    height: 50px;
+}
+
+// index./

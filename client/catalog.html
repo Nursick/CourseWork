@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks Catalog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap">
+    <link rel="stylesheet" href="./scss/index.css">
+    <link rel="stylesheet" href="./scss/catalog.css">
+</head>
+<body>
+    <header>
+        <div class="container flex-between">
+            <div>
+                <a href="http://127.0.0.1:5500/index.html">
+                    <p><span style="color: #16c461;">Task</span>Proof</p>
+                </a>
+            </div>
+
+            <div class="header-menu flex-center">
+                <ul class="flex-center">
+                    <a href="http://127.0.0.1:5500/start.html">
+                        <li>Start</li>
+                    </a>
+                    <a href="http://127.0.0.1:5500/menu.html">
+                        <li>Menu</li>
+                    </a>
+                    <a href="http://127.0.0.1:5500/catalog.html">
+                        <li>Catalog</li>
+                    </a>
+                    <a href="http://127.0.0.1:5500/index.html">
+                        <li>Home</li>
+                    </a>
+                </ul>
+            </div>
+
+            <div>
+                <a href="http://127.0.0.1:5500/login.html">
+                    <button>Log In</button>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-center flex-column">
+        <div class="catalog flex-center flex-column">
+            <h1>Tasks Catalog</h1>
+            <div class="tasksBox flex-center flex-column">
+                <div id="tasksContainer"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer></footer>
+
+    <script src="./js/catalog.js"></script>
+</body>
+</html>

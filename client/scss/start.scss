@@ -1,0 +1,79 @@
+.tasks-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: black;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    padding: 50px;
+
+    .tasks-block {
+        background-color: black;
+        border-top: solid 2px #20e475;
+        padding: 40px;
+        padding-bottom: 0;
+    }
+
+    h1 {
+        color: #20e475;
+        font-size: 50px;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+
+    #taskSelect {
+        background-color: black;
+        color: #20e475;
+        font-size: 24px;
+        padding: 15px 20px;
+        margin-bottom: 30px;
+        border-radius: 10px;
+        border: solid 1px #20e475;
+    }
+
+    .CodeMirror {
+        width: 700px;
+        height: 360px;
+        font-size: 16px;
+        border-radius: 10px;
+        margin-bottom: 40px;
+        border: 2px solid #20e475;
+        overflow: hidden;
+    }
+
+    .cm-s-monokai.CodeMirror {
+        background: black;
+        color: #f8f8f2;
+    }
+
+    .CodeMirror-scroll {
+        padding: 10px;
+    }
+
+    h2 {
+        color: #1fcc6a;
+        font-size: 24px;
+        font-weight: 500;
+    }
+
+    #output {
+        font-size: 24px;
+        font-weight: 500;
+    }
+
+    .CheckAndResult {
+        width: 700px;
+    }
+
+    .runBtn {
+        border: solid 1px #20e475;
+        width: 180px;
+        height: 50px;
+        font-size: 24px;
+        padding: 0;
+    }
+
+    #taskDescription {
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+}

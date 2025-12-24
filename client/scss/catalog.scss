@@ -1,0 +1,82 @@
+.catalog {
+    background: black;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    padding: 50px;
+
+    h1 {
+        color: #20e475;
+        font-size: 50px;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+}
+
+.tasksBox {
+    padding-top: 30px;
+    border-top: solid 2px #20e475;
+}
+
+#tasksContainer {
+    .sectionTitle {
+        margin-top: 40px;
+        margin-bottom: 20px;
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .sectionTitle.easy {
+        color: #1fcc6a;
+    }
+
+    .sectionTitle.medium {
+        color: yellow;
+    }
+
+    .sectionTitle.hard {
+        color: red;
+    }
+
+    .tasksSection {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .taskCard {
+        width: 270px;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+        padding: 15px;
+        background-color: #151515;
+        border: 1px solid #20e475;
+        margin-bottom: 10px;
+        border-radius: 10px;
+
+        h4 {
+            font-size: 22px;
+            color: #1fcc6a;
+        }
+
+        p {
+            font-size: 18px;
+            color: rgb(188, 188, 188);
+        }
+
+        button {
+            width: 200px;
+            font-size: 20px;
+            padding: 8px 0;
+            background: #20e475;
+            color: black;
+
+            &:hover {
+                background-color: #1fcc6a;
+            }
+        }
+    }
+}
